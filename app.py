@@ -25,7 +25,7 @@ def translate_text(text):
 uploaded_file = st.file_uploader("Upload Excel file (.xlsx)", type=["xlsx"])
 
 if uploaded_file:
-    df = pd.read_excel(uploaded_file)
+    df = pd.read_excel(uploaded_file, engine="openpyxl")
     st.write("### Preview", df.head())
     
     col_name = st.selectbox("Select the column with Arabic names", df.columns)
