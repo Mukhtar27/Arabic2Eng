@@ -57,14 +57,14 @@ if uploaded_file:
 
         # Prepare for download
         output = io.BytesIO()
-        df.to_excel(output, index=False, engine='openpyxl')
+        df.to_excel(output, index=False, engine='openpyxl')  # ✅ correct
         output.seek(0)
 
         st.download_button(
-            label="📥 Download Translated Excel",
-            data=output,
-            file_name="translated_names.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        label="📥 Download Translated Excel",
+        data=output,
+        file_name="translated_names.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
 
         # Summary
